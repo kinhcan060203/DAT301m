@@ -1,0 +1,50 @@
+iter: 000020 - train loss: 0.709 - lr: 1.15e-04 - load time: 0.10 - gpu time: 6.01
+iter: 000020 - valid loss: 0.722 - acc full seq: 0.7656 - acc per char: 0.9821
+iter: 000040 - train loss: 0.605 - lr: 2.76e-04 - load time: 0.01 - gpu time: 5.31
+iter: 000040 - valid loss: 0.717 - acc full seq: 0.8906 - acc per char: 0.9938
+iter: 000060 - train loss: 0.628 - lr: 3.00e-04 - load time: 0.02 - gpu time: 5.60
+iter: 000060 - valid loss: 0.715 - acc full seq: 0.8844 - acc per char: 0.9921
+iter: 000080 - train loss: 0.614 - lr: 2.97e-04 - load time: 0.01 - gpu time: 6.21
+iter: 000080 - valid loss: 0.717 - acc full seq: 0.8562 - acc per char: 0.9892
+iter: 000100 - train loss: 0.609 - lr: 2.91e-04 - load time: 0.02 - gpu time: 5.34
+iter: 000100 - valid loss: 0.720 - acc full seq: 0.9156 - acc per char: 0.9952
+iter: 000120 - train loss: 0.608 - lr: 2.82e-04 - load time: 0.19 - gpu time: 4.80
+iter: 000120 - valid loss: 0.715 - acc full seq: 0.8781 - acc per char: 0.9842
+iter: 000140 - train loss: 0.614 - lr: 2.71e-04 - load time: 0.01 - gpu time: 5.36
+iter: 000140 - valid loss: 0.712 - acc full seq: 0.9031 - acc per char: 0.9937
+iter: 000160 - train loss: 0.620 - lr: 2.57e-04 - load time: 0.01 - gpu time: 5.37
+iter: 000160 - valid loss: 0.722 - acc full seq: 0.8625 - acc per char: 0.9947
+iter: 000180 - train loss: 0.621 - lr: 2.42e-04 - load time: 0.01 - gpu time: 5.43
+iter: 000180 - valid loss: 0.712 - acc full seq: 0.9250 - acc per char: 0.9941
+iter: 000200 - train loss: 0.590 - lr: 2.24e-04 - load time: 0.02 - gpu time: 5.23
+iter: 000200 - valid loss: 0.720 - acc full seq: 0.9125 - acc per char: 0.9910
+iter: 000220 - train loss: 0.629 - lr: 2.06e-04 - load time: 0.02 - gpu time: 5.93
+iter: 000220 - valid loss: 0.718 - acc full seq: 0.9187 - acc per char: 0.9960
+iter: 000240 - train loss: 0.650 - lr: 1.86e-04 - load time: 0.26 - gpu time: 6.59
+iter: 000240 - valid loss: 0.719 - acc full seq: 0.9219 - acc per char: 0.9964
+iter: 000260 - train loss: 0.600 - lr: 1.65e-04 - load time: 0.02 - gpu time: 5.46
+iter: 000260 - valid loss: 0.718 - acc full seq: 0.9406 - acc per char: 0.9986
+iter: 000280 - train loss: 0.616 - lr: 1.44e-04 - load time: 0.01 - gpu time: 5.75
+iter: 000280 - valid loss: 0.722 - acc full seq: 0.9500 - acc per char: 0.9964
+iter: 000300 - train loss: 0.596 - lr: 1.24e-04 - load time: 0.01 - gpu time: 5.70
+iter: 000300 - valid loss: 0.716 - acc full seq: 0.9281 - acc per char: 0.9960
+iter: 000320 - train loss: 0.608 - lr: 1.03e-04 - load time: 0.02 - gpu time: 5.12
+iter: 000320 - valid loss: 0.717 - acc full seq: 0.9437 - acc per char: 0.9963
+iter: 000340 - train loss: 0.619 - lr: 8.39e-05 - load time: 0.01 - gpu time: 5.29
+iter: 000340 - valid loss: 0.714 - acc full seq: 0.9500 - acc per char: 0.9945
+iter: 000360 - train loss: 0.636 - lr: 6.59e-05 - load time: 0.24 - gpu time: 5.75
+iter: 000360 - valid loss: 0.712 - acc full seq: 0.9469 - acc per char: 0.9944
+iter: 000380 - train loss: 0.629 - lr: 4.94e-05 - load time: 0.01 - gpu time: 5.85
+iter: 000380 - valid loss: 0.715 - acc full seq: 0.9437 - acc per char: 0.9943
+iter: 000400 - train loss: 0.602 - lr: 3.50e-05 - load time: 0.01 - gpu time: 5.20
+iter: 000400 - valid loss: 0.713 - acc full seq: 0.9531 - acc per char: 0.9970
+iter: 000420 - train loss: 0.597 - lr: 2.27e-05 - load time: 0.01 - gpu time: 5.07
+iter: 000420 - valid loss: 0.712 - acc full seq: 0.9531 - acc per char: 0.9945
+iter: 000440 - train loss: 0.612 - lr: 1.29e-05 - load time: 0.02 - gpu time: 6.03
+iter: 000440 - valid loss: 0.716 - acc full seq: 0.9594 - acc per char: 0.9945
+iter: 000460 - train loss: 0.634 - lr: 5.79e-06 - load time: 0.01 - gpu time: 6.18
+iter: 000460 - valid loss: 0.712 - acc full seq: 0.9563 - acc per char: 0.9945
+iter: 000480 - train loss: 0.615 - lr: 1.46e-06 - load time: 0.26 - gpu time: 5.79
+iter: 000480 - valid loss: 0.714 - acc full seq: 0.9563 - acc per char: 0.9945
+iter: 000500 - train loss: 0.611 - lr: 1.20e-09 - load time: 0.01 - gpu time: 6.02
+iter: 000500 - valid loss: 0.710 - acc full seq: 0.9594 - acc per char: 0.9945

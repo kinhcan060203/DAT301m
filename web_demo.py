@@ -1,12 +1,22 @@
 import config as args
-from models.image_to_text import CONCHOCON
+from models.image_to_text import Image2Text
 from models.check_spell import CheckSpell
 import gradio as gr
 import re
 import json
 from PIL import Image
-
+import numpy as np
 def extract_phrases(text):
+    text =text.split("Câu")
+    if len(text)>1 and ':' in text[1]:
+        text = 'Câu' + ''.join(text[1:])
+        
+    else:
+        text = ''.join(text[:])
+    for i in ['A.',"B.","C.","D."]:
+        if i in text:
+            text = i + ''.join(text.split(i)[1:])
+            break
     return re.findall(r'[\w ]+', text)
 
 def out(data):
@@ -42,13 +52,21 @@ def greet(image):
     
     # model vs image
     checkspell = CheckSpell(args.SPELL_CONFIG)
-    img2text = CONCHOCON(args.CRAFT_CONFIG)
+    img2text = Image2Text(args.CRAFT_CONFIG)
     test_img = path
     raw_text = img2text(test_img)
     
+    # raw_text_2=[]
+    # for text in raw_text:
+    #     text =text.split("Câu")
+    #     if len(text)>1 and ':' in text[1]:
+    #         text = 'Câu' + ''.join(text[1:])
+    #     raw_text_2.append(text)
+    # raw_text=raw_text_2
+    
     with open("demo_result/raw_text_2.json", "w", encoding='utf8') as f:
         json.dump(raw_text, f, indent=4, ensure_ascii=False)
-    extracted = [extract_phrases(sentences) for sentences in raw_text]
+    extracted = [extract_phrases(sentences ) for sentences in raw_text]
     
     phrases = [[checkspell(p.strip()).strip(' \x00 ') for p in phrase if len(p.split()) >= 1] for phrase in extracted] #checked spelling
     with open("demo_result/final_result_2.json", "w", encoding='utf8') as f:

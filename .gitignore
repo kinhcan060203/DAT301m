@@ -1,1 +1,4 @@
 /weights
+/finetune/dataset/*
+/finetune/train_hw
+/finetune/valid_hw

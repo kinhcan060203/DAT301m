@@ -5,7 +5,8 @@ import math
 from skimage import io
 import numpy as np
 from collections import OrderedDict
-
+from vietocr.tool.config import Cfg
+from vietocr.model.trainer import Trainer
 
 def str2bool(v):
     return v.lower() in ("yes", "y", "true", "t", "1")

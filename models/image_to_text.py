@@ -7,15 +7,17 @@ from utils import getDetBoxes, adjustResultCoordinates, copyStateDict
 from vietocr.tool.predictor import Predictor
 from vietocr.tool.config import Cfg
 from PIL import Image
-
+import shutil
+import os
 
 class Image2Text(torch.nn.Module):
     def __init__(self, args):
         super().__init__()
         self.args = args
         config = Cfg.load_config_from_name('vgg_transformer')
-        config['cnn']['pretrained']=False
+        config['cnn']['pretrained']=True
         config['device'] = 'cuda:0'
+        config['weights'] = 'finetune/output/weights/transformerocr.pth'
         self.detector = Predictor(config)
         self.craft = self._load_model()
     
@@ -77,22 +79,26 @@ class Image2Text(torch.nn.Module):
         row_table = self.postprocess_boxes(bboxes)
         
         x_min = np.min([item for sublist in row_table.values() for item in sublist], axis=0)[[0, 2]].min()
+        x_max = np.max([item for sublist in row_table.values() for item in sublist], axis=0)[[1, 3]].max()
+        
         k=0
         results = []
+        
+        if os.path.exists('demo_comeo'):
+            shutil.rmtree('demo_comeo')
+            os.mkdir('demo_comeo', exist_ok=True)
+            
         for row in row_table.values():
             row = np.array(row)
             x0_mean, y0_mean, x1_mean, y1_mean = row[:, [0, 2]].min(), row[:, [1, 3]].min(), row[:, [0, 2]].max(), row[:, [1, 3]].max()
             bbox_img = image[int(y0_mean): int(y1_mean), int(x_min): int(x1_mean)]
             img = Image.fromarray(bbox_img)
             s = self.detector.predict(img)
-            # value = self.reader.readtext(bbox_img, detail=0)
-            # results.append(value[0].strip() if value else '')
             results.append(s.strip() if s else '')
-            # # cv2.imwrite(f"demo_comeo/{k}.png", bbox_img)
+            cv2.imwrite(f"demo_comeo/{s.strip()}.png", bbox_img)
             k+=1
             cv2.rectangle(image_org, (int(x_min), int(y0_mean)), (int(x1_mean), int(y1_mean)), color=(255, 0, 0), thickness=1)
-        
+            
         cv2.imwrite("demo_result/bbox.png", image_org)
         return results
-
 
